@@ -1,23 +1,29 @@
 import sys
+from tabulate import tabulate
 
 # maxsize of a int in python3.4 is 9223372036854775807
 # lets not get carry away let stay within this range
 
+# improvements:
+    # sort prime numbers as they are inserted
+    # improve isDuplicateNumber method by using binarysearch if prime numbers are sorted
+    # create a feature/method that allows user to view the expression of one prime number
+
 # 0, 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29
 class PrimeList:
     def __init__(self):
-        self.primeList = [{"number": 0, "expresion": "1 * 0"},
-                          {"number": 1, "expresion": "1 * 1"},
-                          {"number": 2, "expresion": "1 * 2"},
-                          {"number": 3, "expresion": "1 * 3"},
-                          {"number": 5, "expresion": "1 * 5"},
-                          {"number": 7, "expresion": "1 * 7"},
-                          {"number": 11, "expresion": "1 * 11"},
-                          {"number": 13, "expresion": "1 * 13"},
-                          {"number": 17, "expresion": "1 * 17"},
-                          {"number": 19, "expresion": "1 * 19"},
-                          {"number": 23, "expresion": "1 * 23"},
-                          {"number": 29, "expresion": "1 * 29"}]
+        self.primeList = [{"number": 0, "expression": "1 * 0"},
+                          {"number": 1, "expression": "1 * 1"},
+                          {"number": 2, "expression": "1 * 2"},
+                          {"number": 3, "expression": "1 * 3"},
+                          {"number": 5, "expression": "1 * 5"},
+                          {"number": 7, "expression": "1 * 7"},
+                          {"number": 11, "expression": "1 * 11"},
+                          {"number": 13, "expression": "1 * 13"},
+                          {"number": 17, "expression": "1 * 17"},
+                          {"number": 19, "expression": "1 * 19"},
+                          {"number": 23, "expression": "1 * 23"},
+                          {"number": 29, "expression": "1 * 29"}]
 
     # this method return True/False if number is prime or not
     def isPrime(self, number):
@@ -40,15 +46,19 @@ class PrimeList:
 
         if self.isPrime(number):
             if self.isDuplicateNumber(number):
-                self.primeList.append({"number":number, "expresion": "1 * " + str(number)})
+                self.primeList.append({"number":number, "expression": "1 * " + str(number)})
                 print(str(number) + " has been added!")
                 return True
             return False
 
     # display multiplication table of prime numbers
     def displayPrimeListTable(self):
+        table=[]
+
         for number in self.primeList:
-            print(number["number"], number["expresion"])
+            table.append([number["number"], number["expression"]])
+
+        print (tabulate(table, headers=['Number', 'Expression'], tablefmt='orgtbl'))
 
     # display the set of prime numbers
     def displayPrimeNumbersOnly(self):
@@ -76,21 +86,23 @@ class PrimeList:
 
 obj = PrimeList()
 
-# 37, 41, 43, 47, 53, 59, 61, 67, 71, 73
-obj.addPrimeNumber(4)
-
+obj.displayPrimeListTable()
+# obj.addPrimeNumber(4)
+#
 obj.addPrimeNumber(31)
-obj.displayPrimeNumbersOnly()
-print()
-obj.addPrimeNumber(41)
-obj.displayPrimeNumbersOnly()
-print()
-obj.addPrimeNumber(43)
-obj.displayPrimeNumbersOnly()
-print()
-obj.addPrimeNumber(43)
-obj.displayPrimeNumbersOnly()
-print()
-obj.clearInsertPrime()
+obj.displayPrimeListTable()
 
-obj.displayPrimeNumbersOnly()
+# obj.displayPrimeNumbersOnly()
+# print()
+# obj.addPrimeNumber(41)
+# obj.displayPrimeNumbersOnly()
+# print()
+# obj.addPrimeNumber(43)
+# obj.displayPrimeNumbersOnly()
+# print()
+# obj.addPrimeNumber(43)
+# obj.displayPrimeNumbersOnly()
+# print()
+# obj.clearInsertPrime()
+#
+# obj.displayPrimeNumbersOnly()

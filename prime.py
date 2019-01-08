@@ -25,15 +25,23 @@ class PrimeList:
         else:
             return False
 
-    def 
+    def displayPrimeListTable(self):
+        for number in obj.primeList:
+            print(number["number"], number["expresion"])
+
+    def displayPrime(self):
+        for number in obj.primeList:
+            print(number["number"], end =" ")
+    
+
 
 obj = PrimeList()
 
+obj.displayPrime()
+
+obj.addPrimeNumber(31)
+obj.addPrimeNumber(31)
+obj.addPrimeNumber(31)
 obj.addPrimeNumber(31)
 
-
-
-for number in obj.primeList:
-    print(number["number"], number["expresion"] )
-
-# print(obj.isPrime(4))
+obj.displayPrime()

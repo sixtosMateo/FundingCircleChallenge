@@ -1,4 +1,6 @@
 # 2, 3, 5, 7, 11, 13, 17, 19, 23, 29
+import math
+
 class PrimeList:
     def __init__(self):
         self.primeList = [{"number": 2, "expresion": "1*2"},
@@ -13,10 +15,15 @@ class PrimeList:
                           {"number": 29, "expresion": "1*29"}]
 
     def isPrime(self, number):
-        if number % 2 == 0:
-            return False
-        else:
-            return True
+        factors = 0;
+        iterator = 1;
+
+        while iterator <= number:
+            if number % iterator == 0:
+                factors += 1
+            iterator += 1
+
+        return factors == 2;
 
     def addPrimeNumber(self, number):
         if self.isPrime(number):
@@ -29,19 +36,33 @@ class PrimeList:
         for number in obj.primeList:
             print(number["number"], number["expresion"])
 
-    def displayPrime(self):
+    def displayPrimeNumbersOnly(self):
         for number in obj.primeList:
             print(number["number"], end =" ")
-    
+
+    def clearInsertPrime(self):
+        for prime in self.primeList[10:]:
+            self.primeList.remove(prime)
+        print ("cleared")
 
 
 obj = PrimeList()
 
-obj.displayPrime()
+obj.displayPrimeNumbersOnly()
+
+print()
 
 obj.addPrimeNumber(31)
-obj.addPrimeNumber(31)
-obj.addPrimeNumber(31)
-obj.addPrimeNumber(31)
 
-obj.displayPrime()
+#
+obj.displayPrimeNumbersOnly()
+
+print()
+obj.addPrimeNumber(77)
+obj.addPrimeNumber(937)
+
+obj.displayPrimeNumbersOnly()
+print()
+obj.clearInsertPrime()
+
+obj.displayPrimeNumbersOnly()

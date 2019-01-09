@@ -11,14 +11,16 @@ number.
 ## Dependencies
 Required python3.4
 Required tabulate
-  - pip(3) install tabulate
+  - pip3 install tabulate
+  - pip install tabulate
 
 ## How to Run
 For simplicity purposes Challenge was done in one file:
   1) open terminal:
   2) git clone https://github.com/sixtosMateo/FundingCircleChallenge
   3) Navigate to FundingCircle directory:
-      -  run $ python(3) app.py
+      -  run $ python3 app.py or
+      -  run $ python app.py
 
   4) To run Tests.py  
       -  Navigate to FundingCircle directory:

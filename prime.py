@@ -9,6 +9,7 @@ from tabulate import tabulate
     # improve isDuplicateNumber method by using binarysearch if prime numbers are sorted
     # create a feature/method that allows user to view the expression of one prime number
 
+
 # 0, 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29
 class PrimeList:
     def __init__(self):
@@ -29,6 +30,11 @@ class PrimeList:
     def isPrime(self, number):
         factors = 0;
         iterator = 1;
+        if number == 1 or number == 0:
+            return True
+
+        if number < 0:
+            return False
 
         while iterator <= number:
             if number % iterator == 0:
@@ -86,23 +92,35 @@ class PrimeList:
 
 obj = PrimeList()
 
-obj.displayPrimeListTable()
-# obj.addPrimeNumber(4)
-#
-obj.addPrimeNumber(31)
-obj.displayPrimeListTable()
 
-# obj.displayPrimeNumbersOnly()
-# print()
-# obj.addPrimeNumber(41)
-# obj.displayPrimeNumbersOnly()
-# print()
-# obj.addPrimeNumber(43)
-# obj.displayPrimeNumbersOnly()
-# print()
-# obj.addPrimeNumber(43)
-# obj.displayPrimeNumbersOnly()
-# print()
-# obj.clearInsertPrime()
-#
-# obj.displayPrimeNumbersOnly()
+
+while (True):
+    print("Enter 1 to see Table:")
+    print("Enter 2 add Prime Number: ")
+    print("Enter 3 to clear prime numbers insert:")
+    print("Enter 4 to cancel program:")
+    user_input = input("Some input please: ")
+
+    if user_input =="1":
+        obj.displayPrimeListTable()
+
+    elif user_input =="2":
+        prime = input("Enter a number: ")
+
+        if prime.isdigit():
+            prime = int(prime)
+            obj.addPrimeNumber(prime)
+            prime = ""
+        else:
+            print("Not a correct input!")
+            
+    elif user_input =="3":
+        obj.clearInsertPrime()
+
+    elif user_input =="4":
+        break
+
+    else:
+        print("Enter a correct option (1,2,3,4):")
+
+    print("\n\n\n\n")

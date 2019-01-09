@@ -1,13 +1,6 @@
 import sys
 from tabulate import tabulate
 
-# maxsize of a int in python3.4 is 9223372036854775807
-# lets not get carry away let stay within this range
-
-# improvements:
-    # sort prime numbers as they are inserted
-    # improve isDuplicateNumber method by using binarysearch if prime numbers are sorted
-    # create a feature/method that allows user to view the expression of one prime number
 
 
 # 0, 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29
@@ -57,6 +50,8 @@ class PrimeList:
                 return True
             return False
 
+        return False
+
     # display multiplication table of prime numbers
     def displayPrimeListTable(self):
         table=[]
@@ -91,36 +86,3 @@ class PrimeList:
         return True
 
 obj = PrimeList()
-
-
-
-while (True):
-    print("Enter 1 to see Table:")
-    print("Enter 2 add Prime Number: ")
-    print("Enter 3 to clear prime numbers insert:")
-    print("Enter 4 to cancel program:")
-    user_input = input("Some input please: ")
-
-    if user_input =="1":
-        obj.displayPrimeListTable()
-
-    elif user_input =="2":
-        prime = input("Enter a number: ")
-
-        if prime.isdigit():
-            prime = int(prime)
-            obj.addPrimeNumber(prime)
-            prime = ""
-        else:
-            print("Not a correct input!")
-            
-    elif user_input =="3":
-        obj.clearInsertPrime()
-
-    elif user_input =="4":
-        break
-
-    else:
-        print("Enter a correct option (1,2,3,4):")
-
-    print("\n\n\n\n")

@@ -12,7 +12,7 @@ number.
 Required python3.4
 Required tabulate
   - pip3 install tabulate
-          or
+          (or)
   - pip install tabulate
 
 ## How to Run
@@ -21,7 +21,7 @@ For simplicity purposes Challenge was done in one file:
   2) git clone https://github.com/sixtosMateo/FundingCircleChallenge
   3) Navigate to FundingCircle directory:
       -  run $ python3 app.py
-              or
+              (or)
       -  run $ python app.py
 
   4) To run Tests.py  

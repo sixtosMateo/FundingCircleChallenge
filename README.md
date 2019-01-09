@@ -19,12 +19,14 @@ For simplicity purposes Challenge was done in one file:
   2) git clone https://github.com/sixtosMateo/FundingCircleChallenge
   3) Navigate to FundingCircle directory:
       -  run $ python(3) app.py
-      
+
   4) To run Tests.py  
       -  Navigate to FundingCircle directory:
       -  run $ pytest Tests.py
 
 ## How to use:
+  /app.py
+
   # Maxsize of a int in python3.4 is 9223372036854775807 lets not get
     carry away let stay within this range
 
